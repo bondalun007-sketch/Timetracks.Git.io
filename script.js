@@ -1,45 +1,39 @@
-const revealItems = document.querySelectorAll('.reveal');
+const searchInput = document.querySelector('.search-input');
+const chips = document.querySelectorAll('.chip');
+const searchForm = document.querySelector('.search-form');
 
-if (revealItems.length) {
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.18 }
-  );
+if (searchInput) {
+  searchInput.addEventListener('focus', () => {
+    searchInput.parentElement.style.borderColor = '#9aa0a6';
+  });
 
-  revealItems.forEach((item) => revealObserver.observe(item));
-}
-
-const menuToggle = document.querySelector('.menu-toggle');
-const mainNav = document.querySelector('.main-nav');
-
-if (menuToggle && mainNav) {
-  menuToggle.addEventListener('click', () => {
-    const isOpen = mainNav.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  searchInput.addEventListener('blur', () => {
+    searchInput.parentElement.style.borderColor = '#dadce0';
   });
 }
 
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', (event) => {
+chips.forEach((chip) => {
+  chip.addEventListener('click', () => {
+    if (searchInput) {
+      const value = chip.dataset.query || chip.textContent.trim();
+      searchInput.value = value;
+      searchInput.focus();
+    }
+  });
+});
+
+if (searchForm) {
+  searchForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    const button = contactForm.querySelector('button[type="submit"]');
+    const button = searchForm.querySelector('.google-btn');
     if (button) {
       const originalText = button.textContent;
-      button.textContent = 'Request sent';
+      button.textContent = 'Searching...';
       button.disabled = true;
       setTimeout(() => {
         button.textContent = originalText;
         button.disabled = false;
-        contactForm.reset();
-      }, 1800);
+      }, 1200);
     }
   });
 }
