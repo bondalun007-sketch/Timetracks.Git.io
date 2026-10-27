@@ -1,15 +1,14 @@
 :root {
-  --blue: #4285f4;
+  --blue: #1a73e8;
   --red: #ea4335;
   --yellow: #fbbc05;
   --green: #34a853;
-  --bg: #ffffff;
-  --bg-soft: #f8f9fa;
-  --panel: #ffffff;
-  --line: #dadce0;
   --text: #202124;
   --muted: #5f6368;
-  --shadow: 0 1px 6px rgba(32, 33, 36, 0.18);
+  --line: #dadce0;
+  --soft: #f8f9fa;
+  --panel: #ffffff;
+  --shadow: 0 1px 6px rgba(32, 33, 36, 0.12);
 }
 
 * {
@@ -23,7 +22,7 @@ html {
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background: var(--bg);
+  background: #fff;
   color: var(--text);
 }
 
@@ -46,12 +45,12 @@ a {
 }
 
 .container {
-  width: min(1180px, calc(100% - 2rem));
+  width: min(1260px, calc(100% - 2rem));
   margin: 0 auto;
 }
 
 .google-header {
-  padding-top: 1rem;
+  padding-top: 0.9rem;
 }
 
 .top-nav {
@@ -66,7 +65,7 @@ a {
   display: flex;
   align-items: center;
   gap: 1.2rem;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--muted);
 }
 
@@ -76,7 +75,7 @@ a {
 
 .nav-left a,
 .nav-right a {
-  transition: opacity 0.2s ease;
+  transition: opacity 0.18s ease;
 }
 
 .nav-left a:hover,
@@ -85,26 +84,27 @@ a {
 }
 
 .icon-btn {
-  width: 2.3rem;
-  height: 2.3rem;
+  width: 2.1rem;
+  height: 2.1rem;
   border: none;
-  border-radius: 50%;
   background: transparent;
+  border-radius: 50%;
   color: var(--text);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 .signin-btn {
   border: none;
-  background: var(--blue);
+  background: #1a73e8;
   color: white;
-  padding: 0.7rem 1.2rem;
   border-radius: 999px;
+  padding: 0.72rem 1.2rem;
   font-weight: 600;
+  box-shadow: 0 1px 2px rgba(26, 115, 232, 0.2);
 }
 
 .google-main {
-  padding-top: 6vh;
+  padding-top: 8vh;
 }
 
 .hero-block {
@@ -118,10 +118,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: clamp(3rem, 6vw, 5rem);
+  margin-bottom: 1.7rem;
   font-weight: 700;
   letter-spacing: -0.08em;
-  margin-bottom: 1.8rem;
+  font-size: clamp(3.4rem, 5vw, 5.4rem);
+  line-height: 1;
 }
 
 .logo-letter {
@@ -134,7 +135,7 @@ a {
 .logo-letter.green { color: var(--green); }
 
 .search-form {
-  width: min(100%, 640px);
+  width: min(100%, 720px);
 }
 
 .search-box {
@@ -144,15 +145,15 @@ a {
   gap: 0.8rem;
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 0.9rem 1.1rem 0.9rem 1.2rem;
-  box-shadow: var(--shadow);
+  padding: 0.9rem 1.1rem 0.9rem 1.15rem;
   background: var(--panel);
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.08);
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
 }
 
 .search-box:focus-within {
-  box-shadow: 0 1px 8px rgba(32, 33, 36, 0.22);
-  border-color: #dfe1e5;
+  box-shadow: 0 1px 8px rgba(32, 33, 36, 0.12);
+  border-color: #c7c9ce;
 }
 
 .search-icon,
@@ -184,10 +185,11 @@ a {
 .google-btn {
   border: 1px solid transparent;
   border-radius: 0.45rem;
-  padding: 0.8rem 1.15rem;
-  background: var(--bg-soft);
+  background: var(--soft);
   color: var(--text);
+  padding: 0.8rem 1.2rem;
   font-weight: 500;
+  border-color: #f1f3f4;
 }
 
 .google-btn.secondary {
@@ -196,19 +198,20 @@ a {
 }
 
 .quick-chips {
-  margin-top: 1.5rem;
+  margin-top: 1.4rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 0.7rem;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 .chip {
-  border: 1px solid var(--line);
+  border: 1px solid #f1f3f4;
   background: #fff;
   color: var(--text);
   border-radius: 999px;
-  padding: 0.55rem 0.9rem;
+  padding: 0.52rem 0.8rem;
   font-size: 0.88rem;
 }
 
@@ -220,25 +223,25 @@ a {
 }
 
 .mini-card {
-  background: var(--bg-soft);
+  background: var(--soft);
   border: 1px solid var(--line);
   border-radius: 1.1rem;
-  padding: 1.4rem;
+  padding: 1.35rem 1.2rem;
 }
 
 .mini-kicker,
 .eyebrow {
   display: inline-block;
-  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.74rem;
+  font-weight: 700;
+  font-size: 0.72rem;
   color: var(--muted);
 }
 
 .mini-card h3 {
-  margin: 0.6rem 0 0.4rem;
-  font-size: 1.3rem;
+  margin: 0.55rem 0 0.4rem;
+  font-size: 1.26rem;
 }
 
 .mini-card p {
@@ -250,41 +253,41 @@ a {
 .product-grid {
   margin-top: 4rem;
   display: grid;
-  grid-template-columns: 1.4fr 0.8fr;
+  grid-template-columns: 1.5fr 0.75fr;
   gap: 1.5rem;
   padding-bottom: 4rem;
 }
 
 .product-panel {
-  background: linear-gradient(145deg, #f8fbff, #ffffff);
+  background: linear-gradient(135deg, #f7fbff 0%, #ffffff 100%);
   border: 1px solid var(--line);
   border-radius: 1.5rem;
   padding: 2rem;
-  min-height: 250px;
+  min-height: 260px;
   display: flex;
   align-items: center;
 }
 
 .panel-copy {
-  max-width: 40rem;
+  max-width: 46rem;
 }
 
 .panel-copy h2 {
   margin: 0.8rem 0 0.8rem;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.2rem, 3vw, 3.1rem);
   line-height: 1.08;
   letter-spacing: -0.06em;
 }
 
 .panel-copy p {
+  margin: 0 0 1rem;
   color: var(--muted);
   line-height: 1.7;
-  margin: 0 0 1rem;
 }
 
 .text-link {
-  font-weight: 600;
   color: var(--blue);
+  font-weight: 600;
 }
 
 .panel-stack {
@@ -295,14 +298,14 @@ a {
 .stat-box {
   background: #fff;
   border: 1px solid var(--line);
-  border-radius: 1.3rem;
-  padding: 1.5rem;
+  border-radius: 1.2rem;
   box-shadow: var(--shadow);
+  padding: 1.5rem;
 }
 
 .stat-box strong {
   display: block;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2rem, 4vw, 2.8rem);
   letter-spacing: -0.06em;
 }
 
@@ -311,17 +314,13 @@ a {
 }
 
 .stat-box.muted {
-  background: var(--bg-soft);
+  background: var(--soft);
 }
 
 @media (max-width: 860px) {
   .info-strip,
   .product-grid {
     grid-template-columns: 1fr;
-  }
-
-  .top-nav {
-    padding: 0 0.5rem;
   }
 
   .nav-left {
@@ -331,11 +330,16 @@ a {
 
 @media (max-width: 560px) {
   .google-main {
-    padding-top: 3.5vh;
+    padding-top: 4vh;
   }
 
   .search-box {
     padding: 0.8rem 0.9rem;
+  }
+
+  .search-actions {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .google-btn {
